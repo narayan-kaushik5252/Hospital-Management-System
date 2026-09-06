@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HMS | Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar">
+    <h2>HMS</h2>
+    <p id="userTag" class="user-tag"></p>
+    <ul>
+      <li><a href="#" data-view="patients" id="navPatients">Patients</a></li>
+      <li><a href="#" data-view="doctors" id="navDoctors">Doctors</a></li>
+      <li><a href="#" data-view="appointments" id="navAppointments">Appointments</a></li>
+    </ul>
+    <button id="logoutBtn" class="logout-btn">Log Out</button>
+  </nav>
+
+  <main class="content">
+    <section id="view-patients" class="view">
+      <div class="view-header">
+        <h2>Patients</h2>
+        <button id="addPatientBtn" class="primary-btn">+ Add Patient</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>ID</th><th>Name</th><th>DOB</th><th>Gender</th><th>Phone</th><th>Actions</th></tr></thead>
+        <tbody id="patientsTableBody"></tbody>
+      </table>
+    </section>
+
+    <section id="view-doctors" class="view hidden">
+      <div class="view-header">
+        <h2>Doctors</h2>
+        <button id="addDoctorBtn" class="primary-btn">+ Add Doctor</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>ID</th><th>Name</th><th>Specialization</th><th>Experience</th><th>Available</th><th>Actions</th></tr></thead>
+        <tbody id="doctorsTableBody"></tbody>
+      </table>
+    </section>
+
+    <section id="view-appointments" class="view hidden">
+      <div class="view-header">
+        <h2>Appointments</h2>
+        <button id="addAppointmentBtn" class="primary-btn">+ Book Appointment</button>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody id="appointmentsTableBody"></tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<!-- Generic modal used for all create/edit forms -->
+<div id="modalOverlay" class="modal-overlay hidden">
+  <div class="modal">
+    <h3 id="modalTitle"></h3>
+    <form id="modalForm"></form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/dashboard.js"></script>
+</body>
+</html>
